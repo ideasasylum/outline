@@ -1,0 +1,28 @@
+{
+  "name": "Outline",
+  "description": "Open source wiki and knowledge base for growing teams",
+  "website": "https://www.getoutline.com/",
+  "repository": "https://github.com/ideasasylum/outline",
+  "success_url": "/",
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key",
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Hobby"
+    }
+  },
+  "image": "heroku/node",
+  "addons": [
+    {
+      "plan": "heroku-redis"
+    },
+    {
+      "plan": "heroku-postgresql"
+    }
+  ]
+}
