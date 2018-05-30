@@ -2,23 +2,45 @@
   "name": "Outline",
   "description": "Open source wiki and knowledge base for growing teams",
   "website": "https://www.getoutline.com/",
-  "repository": "https://github.com/ideasasylum/outline",
+  "repository": "https://github.com/outline/outline",
   "success_url": "/",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Hobby"
+    }
+  },
+  "image": "heroku/node",
+  "addons": [
+    {
+      "plan": "heroku-redis"
+    },
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "yarn sequelize db:migrate"
+  },
   "env": {
     "SECRET_KEY": {
       "description": "A secret key",
       "generator": "secret"
     },
     "SLACK_KEY": {
-      "description": "Your Slack app key",
+      "description": "Your Slack app client id",
       "required": true
     },
     "SLACK_SECRET": {
-      "description": "Your Slack secret key",
+      "description": "Your Slack secret client secret",
       "required": true
     },
     "SLACK_VERIFICATION_TOKEN": {
       "description": "Your Slack verification token",
+      "required": false
+    },
+    "URL": {
+      "description": "https://{your app name}.herokuapp.com",
       "required": false
     },
     "AWS_ACCESS_KEY_ID": {
@@ -61,20 +83,5 @@
       "description": "",
       "required": false
     }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "Hobby"
-    }
-  },
-  "image": "heroku/node",
-  "addons": [
-    {
-      "plan": "heroku-redis"
-    },
-    {
-      "plan": "heroku-postgresql"
-    }
-  ]
+  }
 }
