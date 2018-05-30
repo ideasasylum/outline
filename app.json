@@ -5,9 +5,61 @@
   "repository": "https://github.com/ideasasylum/outline",
   "success_url": "/",
   "env": {
-    "SECRET_TOKEN": {
+    "SECRET_KEY": {
       "description": "A secret key",
       "generator": "secret"
+    },
+    "SLACK_KEY": {
+      "description": "Your Slack app key",
+      "required": true
+    },
+    "SLACK_SECRET": {
+      "description": "Your Slack secret key",
+      "required": true
+    },
+    "SLACK_VERIFICATION_TOKEN": {
+      "description": "Your Slack verification token",
+      "required": false
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "description": "",
+      "required": false
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "description": "",
+      "required": false
+    },
+    "AWS_S3_UPLOAD_BUCKET_URL": {
+      "description": "",
+      "required": false
+    },
+    "AWS_S3_UPLOAD_BUCKET_NAME": {
+      "description": "",
+      "required": false
+    },
+    "SMTP_HOST": {
+      "description": "",
+      "required": false
+    },
+    "SMTP_PORT": {
+      "description": "",
+      "required": false
+    },
+    "SMTP_USERNAME": {
+      "description": "",
+      "required": false
+    },
+    "SMTP_PASSWORD": {
+      "description": "",
+      "required": false
+    },
+    "SMTP_FROM_EMAIL": {
+      "description": "",
+      "required": false
+    },
+    "SMTP_REPLY_EMAIL": {
+      "description": "",
+      "required": false
     }
   },
   "formation": {
